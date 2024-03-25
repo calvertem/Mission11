@@ -1,0 +1,25 @@
+﻿@using Mission11.Models
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model BooksListViewModel
+
+    <h1>The Bookstore!!</h1>
+
+    @foreach (Book b in Model.Books)
+    {
+        <h3>@b.Title</h3>
+
+        <ul>
+            <li>Author: @b.Author</li>
+            <li>Publisher: @b.Publisher</li>
+            <li>ISBN: @b.Isbn</li>
+            <li>Classification/Category: @b.Classification</li>
+            <li>Number of Pages: @b.PageCount</li>
+            <li>Price: @b.Price</li>
+        </ul>
+    }
+
+<div page-model="@Model.PaginationInfo" page-action="Index"></div>
+
